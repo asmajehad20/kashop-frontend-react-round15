@@ -3,11 +3,11 @@ import axios from 'axios'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup"
-import {registerSchema} from '../../../validation/RegisterSchema'
+import {loginSchema} from '../../../validation/LoginSchema'
 
 export default function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: yupResolver(registerSchema),
+    resolver: yupResolver(loginSchema),
   })
   const loginForm = async (values) => {
     try {
